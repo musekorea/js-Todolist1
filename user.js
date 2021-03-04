@@ -10,7 +10,6 @@ function loadName(){
     askName();
   
   }else {
-    userScreen.classList.add('unshow');
     showName(currentUser);
 
   }
@@ -24,10 +23,11 @@ function showName(text){
 function askName(){
     userForm.classList.add('showing');
     userInput.classList.add('showing');
+    userInput.focus();
     userForm.addEventListener('submit', handleSubmit);
 }
 function handleSubmit(event){
-  //event.preventDefault();
+  event.preventDefault();
   const currentValue = userInput.value
   showName(currentValue);
   setName(currentValue);
